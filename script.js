@@ -1,1 +1,1 @@
-alet("hello");
+alert("hello");
