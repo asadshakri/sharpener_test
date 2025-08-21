@@ -9,19 +9,43 @@
 </head>
 
 <body style="margin: 0">
-    <form onsubmit="handleSubmit(event)">
+    <form onsubmit="handleFormSubmit(event)">
         <label>Username</label>
         <input type="text" id="username" name="username">
         <label>Email</label>
         <input type="email" id="email" name="email">
         <label>Phone</label>
         <input type="tel" id="phone" name="phone">
-
         <button type="submit">Submit</button>
     </form>
     <ul></ul>
 </body>
-<!-- Do not touch the below line. Write your javascript code in index.js-->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: lightblue;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        margin: 20px auto;
+    }
+    label {
+        margin-top: 10px;
+    }
+    input {
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 5px;
+        display: flex;
+    }
+    ul {
+        list-style-type: bullet;
+    }
+    </style>
 <script src="index.js"></script>
 
 </html>

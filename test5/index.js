@@ -1,17 +1,12 @@
 document.addEventListener("DOMContentLoaded", initialize);
 
-    // Don't remove anything just complete the functions
-
     // When the page get load display all users
 function initialize() {
     const usersList = JSON.parse(localStorage.getItem("usersList")) || [];
-
     for (let i = 0; i < usersList.length; i++)
     {
         display(usersList[i]);
     }
-     
-
 }
 
     // add new users in usersList array
@@ -40,11 +35,15 @@ function handleFormSubmit(event) {
         li.firstChild.textContent = userDetails.username + " " + userDetails.email + " " + userDetails.phone;
 
         sessionStorage.removeItem("editId");
+        const submitbtn = document.querySelector("button[type=submit]");
+        submitbtn.textContent = "Submit"; // Reset the button text after editing
+
     }
     else {
         addData(usersList, userDetails);
     }
     localStorage.setItem("usersList", JSON.stringify(usersList));
+    event.target.reset(); // Reset the form after submission
 
         
 
@@ -85,7 +84,7 @@ function addData(usersList, userDetails) {
 
 
     // use this function to delete the user details from local store and DOM (screen)
-function deleteData(id) {
+function deleteData(id,li) {
 
     const usersList = JSON.parse(localStorage.getItem("usersList")) || [];
 
@@ -108,9 +107,9 @@ function deleteData(id) {
     // use this function to update user details from local storage
 function editData(data) {
 
-    const username = document.querySelector("username");
-    const email = document.querySelector("email");
-    const phone = document.querySelector("phone");
+    const username = document.querySelector("#username");
+    const email = document.querySelector("#email");
+    const phone = document.querySelector("#phone");
 
     username.value = data.username;
     email.value = data.email;
@@ -121,6 +120,5 @@ function editData(data) {
     submitbtn.textContent = "Update";
 
 }
-
 
 module.exports = handleFormSubmit
