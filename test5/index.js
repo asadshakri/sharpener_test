@@ -30,7 +30,7 @@ function handleFormSubmit(event) {
                 usersList[i].phone = userDetails.phone;
             }
         }
-
+        
         const li = document.getElementById(editId);
         li.firstChild.textContent = userDetails.username + " " + userDetails.email + " " + userDetails.phone;
 
