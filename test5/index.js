@@ -120,5 +120,4 @@ function editData(data) {
     submitbtn.textContent = "Update";
 
 }
-
 module.exports = handleFormSubmit
