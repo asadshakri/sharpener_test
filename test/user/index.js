@@ -64,11 +64,6 @@ function edituser(userDetails, userItem) {
   document.getElementById("phone").value = userDetails.phone;
   deleteuser(userDetails._id, userItem);
 
-  const user={
-    username: userDetails.username,
-    email: userDetails.email,
-    phone: userDetails.phone,
-  };
  // add(user);
  
 }
@@ -82,4 +77,5 @@ function deleteuser(userId, userItem) {
       userList.removeChild(userItem);
     })
     .catch((error) => console.log(error));
+
 }
