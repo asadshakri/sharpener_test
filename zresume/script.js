@@ -43,7 +43,7 @@ Promise.all([projectorPromise, pizzasPromise, friendsPromise]).then((result) => 
     console.log(err);
 })*/
 
-async function picnicDecision() {
+/*async function picnicDecision() {
   // Write your code here
   
     
@@ -61,4 +61,27 @@ async function picnicDecision() {
   
 }
 
-picnicDecision();
+picnicDecision();*/
+
+/*function add(...num)
+{
+    let sum;sum=0;
+    for(let i =0;i<num.length;i++)
+    {
+        sum=sum+num[i];
+    }
+    return sum;
+}
+
+console.log(add(1,2,3,4,5));*/
+
+/*const list=document.querySelector("#work1");
+console.log(list.children);*/
+
+var n=2;
+
+function sq(num){
+    //var ans=num*num;
+    return n;
+}
+var square2=sq(n);
