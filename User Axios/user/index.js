@@ -1,8 +1,8 @@
+var apiURL= "http://localhost:4000/users";
+
 window.addEventListener("DOMContentLoaded", function () {
     axios
-        .get(
-        "https://crudcrud.com/api/b5d8d848cdbe477e96df4e131be04e75/appointmentData"
-        )
+        .get(`${apiURL}`)
         .then((response) => {
         for (let i = 0; i < response.data.length; i++) {
             displayUserOnScreen(response.data[i]);
@@ -43,7 +43,7 @@ function displayUserOnScreen(userDetails) {
   const userList = document.querySelector("ul");
   userList.appendChild(userItem);
 
-  deleteBtn.addEventListener("click", ()=> deleteuser(userDetails._id, userItem));
+  deleteBtn.addEventListener("click", ()=> deleteuser(userDetails.id, userItem));
   editBtn.addEventListener("click", ()=> edituser(userDetails, userItem));
    
 }
@@ -51,7 +51,7 @@ function displayUserOnScreen(userDetails) {
 function add(userDetails) {
     axios
     .post(
-      "https://crudcrud.com/api/b5d8d848cdbe477e96df4e131be04e75/appointmentData",
+      `${apiURL}`,
       userDetails
     )
     .then((response) => displayUserOnScreen(response.data))
@@ -62,7 +62,7 @@ function edituser(userDetails, userItem) {
   document.getElementById("username").value = userDetails.username;
   document.getElementById("email").value = userDetails.email;
   document.getElementById("phone").value = userDetails.phone;
-  deleteuser(userDetails._id, userItem);
+  deleteuser(userDetails.id, userItem);
 
  // add(user);
  
@@ -71,7 +71,7 @@ function deleteuser(userId, userItem) {
     const userList = document.querySelector("ul");
     axios
     .delete(
-      `https://crudcrud.com/api/b5d8d848cdbe477e96df4e131be04e75/appointmentData/${userId}`
+      `${apiURL}/${userId}`
     )
     .then((response) => {console.log(response);
       userList.removeChild(userItem);

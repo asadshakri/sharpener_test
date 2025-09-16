@@ -1,87 +1,53 @@
-/*function buyBike(planTrip) {
-    setTimeout(function(){ console.log("Bought Royal Enfield Himalayan"); planTrip()}, 2000);
-  }
-  
-  function planTrip() {
-    setTimeout(() => { console.log("Trip to Ladakh") }, 1000);
-  }
-  buyBike(planTrip);*/
+/*let table="asad"
+function outer(){
+let table="window";
+return function fun(){
+    console.log(this.table);
+}}
+outer()();*/
 
- /* const projectorPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        const rented = false;
-        if (rented)
-            resolve("Projector rented successfully");
-        else
-            reject("Error: Projectors out of stock");
-    },1000)
-});
-
-const pizzasPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        const rented = false;
-        if (rented)
-            resolve("Pizzas delivered at time");
-        else
-            reject("Error: Pizzas not delivered on time");
-    },2000)
-});
-
-const friendsPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        const rented = false;
-        if (rented)
-            resolve("Both friends available");
-        else
-            reject("Error: Both friends not available");
-    },3000)
-});
-
-Promise.all([projectorPromise, pizzasPromise, friendsPromise]).then((result) => {
-    console.log(result);
-}).catch((err) => {
-    console.log(err);
-})*/
-
-/*async function picnicDecision() {
-  // Write your code here
-  
-    
-      const checkWeather= await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          const isSunny = false;
-          if (isSunny)
-            resolve("Let us go for picnic");
-          else
-            reject("Error: It is cloudy");
-        },3000)
-      })
-       console.log(checkWeather);
-       console.log("Picnic started");
-  
+//let arr=[1,2,3,4,2]
+/*let obj={
+    name: "asad"
 }
 
-picnicDecision();*/
 
-/*function add(...num)
-{
-    let sum;sum=0;
-    for(let i =0;i<num.length;i++)
-    {
-        sum=sum+num[i];
-    }
-    return sum;
-}
+console.log(Array.isArray(arr))
+console.log(Array.isArray(obj))
 
-console.log(add(1,2,3,4,5));*/
+console.log(Array.from("and"));
+console.log(Array.of(1,2,3));*/
 
-/*const list=document.querySelector("#work1");
-console.log(list.children);*/
+//arr.unshift(5);   //add start
+//arr.shift();      //remove start
 
-var n=2;
+//arr.splice(1,2,7)         //add/remove at position
 
-function sq(num){
-    //var ans=num*num;
-    return n;
-}
-var square2=sq(n);
+//console.log(arr.slice(1,3))
+
+//console.log(arr.includes(4));
+
+//console.log(arr.indexOf(1))
+
+//console.log(arr.lastIndexOf(2))
+
+//console.log(arr.find(x=>x>3))   //first match
+
+//console.log(arr.findIndex(x=>x%2==0)) 
+
+//const newarr= arr.map((value,index,arr)=>{
+ //   return value*index;
+//})
+
+//const newarr=arr.filter((value,index,arr)=>{
+//    return value%2===0;
+//})
+//arr.sort();
+//arr.reverse();
+//console.log(arr.join(""));
+//console.log(newarr);
+
+const arr = ["a", "b", "c", "d"];
+
+const left = arr.reduce((acc, curr) => acc + curr,"");
+console.log(left);
